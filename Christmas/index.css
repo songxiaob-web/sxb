@@ -1,3 +1,17 @@
+#odiv {
+  background-repeat: no-repeat;
+  background-size: 37% 90%;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.bgimg {
+  width: auto;
+  position: absolute;
+  height: 100%;
+}
+
 .text {
   color: whitesmoke;
   font-size: 45px;
@@ -6,14 +20,17 @@
   text-shadow: 5px 5px 5px yellow;
 }
 
+.audio {
+  position: absolute;
+  top: 80px;
+  left: 20px;
+  z-index: 2;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
-  background-color: #020024;
 }
 
 .bgg {
@@ -23,19 +40,27 @@ body {
   z-index: 1;
   height: 100vh;
   left: 50%;
-  margin-left: -315px;
+  transform: translate(-50%, 0);
 }
 
 .bgg li.sphere {
-  width: 650px;
-  height: 650px;
-  background: #020024;
+  width: 50vw;
+  height: 100vh;
+  /* width: 650px;
+  height: 650px; */
+  /* background: #020024; */
   background: radial-gradient(
+    rgba(255, 255, 255, 0.2) 47%,
+    rgba(108, 108, 142, 0.1) 51%,
+    rgba(171, 171, 255, 0.1) 52%,
+    #ffffff 53%
+  );
+  /* background: radial-gradient(
     rgba(2, 0, 36, 0.5) 47%,
     rgba(108, 108, 142, 0.7) 51%,
     rgba(171, 171, 255, 0.7) 52%,
     #020024 53%
-  );
+  ); */
   animation: 3s infinite linear bigAndSmall alternate-reverse;
 }
 
@@ -57,7 +82,7 @@ body {
     );
   } */
   to {
-    transform: scale(1.5);
+    transform: scale(1.2);
   }
 }
 
@@ -65,13 +90,20 @@ ul {
   list-style-type: none;
 }
 
+.treeandtoys-container {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+}
+
 .tree {
   z-index: 2;
-  position: fixed;
+  position: absolute;
   left: 50%;
   margin-left: -160px;
   display: grid;
-  height: 97vh;
   align-content: center;
   grid-template-areas: ". tree-top ." ". tree-middle ." ". tree-bottom ." ". tree-stem .";
   grid-template-columns: 100px auto 100px;
@@ -893,7 +925,7 @@ ul {
   grid-template-columns: repeat(9, 20px);
   grid-template-rows: repeat(12, 20px);
   left: calc(50% - 100px);
-  top: calc(50% - 135px);
+  top: calc(50% - 85px);
   z-index: 2;
 }
 
