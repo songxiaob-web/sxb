@@ -1,223 +1,535 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./index.css">
-  <link rel="stylesheet" href="./media.css">
-  <title>Document</title>
+  <meta charset="utf-8">
+  <title>除夕炫彩</title>
+
+  <style>
+    html,
+    body {
+      margin: 0px;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+  </style>
+
 </head>
 
 <body>
-  <img class="bgimg" />
-  <!-- <marquee behavior="" direction="left" style="position: absolute;z-index: 99;font-size: 60px;" scrolldelay="20"
-    truespeed class="">123</marquee> -->
-  <marquee behavior="" direction="left" style="position: absolute;z-index: 99;font-size: 60px;" scrolldelay="20"
-    truespeed class="">珠珠~圣诞快乐,点击右惊喜哦</marquee>
-  <div id="odiv">
-    <ul class="bgg">
-      <li class="sphere"></li>
-      <p class="text"></p>
-    </ul>
+  <canvas id="canvas" style="position:absolute;width:100%;height:100%;z-index:8888"></canvas>
+  <canvas style="position:absolute;width:100%;height:100%;z-index:9999" class="canvas"></canvas>
 
-    <div class="treeandtoys-container" id="toysBox">
-      <ul class="tree">
-        <li class="top-star"> </li>
-        <li class="top">
-          <ul class="tree-pts">
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-          </ul>
-        </li>
-        <li class="middle first">
-          <ul class="tree-pts">
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-          </ul>
-        </li>
-        <li class="middle second">
-          <ul class="tree-pts">
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-          </ul>
-        </li>
-        <li class="middle third">
-          <ul class="tree-pts">
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-          </ul>
-        </li>
-        <li class="bottom outer">
-          <ul class="tree-pts">
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts left"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-            <li class="pts right"></li>
-          </ul>
-        </li>
-        <li class="stem">
-          <ul class="tree-stem">
-            <li class="stem"></li>
-            <li class="gift g1"></li>
-            <li class="gift g2"></li>
-            <li class="gift g3"></li>
-            <li class="gift g4"></li>
-            <li class="gift g5"></li>
-            <li class="gift g6"></li>
-            <li class="gift g7"></li>
-            <li class="gift g8"></li>
-            <li class="gift g9"></li>
-            <li class="shadow"></li>
-          </ul>
-        </li>
-      </ul>
-      <ul class="toys">
-        <li class="star"></li>
-        <li class="ball b1"></li>
-        <li class="ball b2"></li>
-        <li class="ball b3"></li>
-        <li class="ball b4"></li>
-        <li class="ball b5"></li>
-        <li class="ball b6"></li>
-        <li class="ball b7"></li>
-        <li class="ball b8"></li>
-        <li class="ball b9"></li>
-        <li class="ball b10"></li>
-        <li class="ball b11"></li>
-        <li class="ball b12"></li>
-        <li class="ball b13"></li>
-        <li class="ball b14"></li>
-        <li class="ball b15"></li>
-        <li class="ball b16"></li>
-        <li class="ball b17"></li>
-        <li class="ball b18"></li>
-        <li class="ball b19"></li>
-        <li class="ball b20"></li>
-        <li class="light l1"></li>
-        <li class="light l2"></li>
-        <li class="light l3"></li>
-        <li class="light l4"></li>
-        <li class="light l5"></li>
-        <li class="light l6"></li>
-        <li class="light l7"></li>
-        <li class="light l8"></li>
-        <li class="light l9"></li>
-        <li class="light l10"></li>
-        <li class="light l11"></li>
-        <li class="light l12"></li>
-        <li class="light l13"></li>
-        <li class="light l14"></li>
-        <li class="light l15"></li>
-        <li class="light l16"></li>
-        <li class="light l17"></li>
-        <li class="light l18"></li>
-        <li class="light l19"></li>
-        <li class="light l20"></li>
-        <li class="light l21"></li>
-        <li class="light l22"></li>
-        <li class="light l23"></li>
-        <li class="light l24"></li>
-        <li class="light l25"></li>
-      </ul>
+  <canvas style="position:absolute;width:100%;height:100%;z-index:1" class="canvas"></canvas>
+  <canvas style="position:absolute;width:100%;height:100%;z-index:9999" class="canvas"></canvas>
+  <canvas style="position:absolute;width:100%;height:100%;z-index:9999" class="canvas"></canvas>
+
+  <div class="overlay">
+    <div class="tabs">
+      <div class="tabs-labels">
+        <span class="tabs-label">Commands</span>
+        <span class="tabs-label">Info</span>
+        <spanclass="tabs-label">Share</span>
+      </div>
+      <div class="tabs-panels">
+        <ul class="tabs-panel commands">
+        </ul>
+      </div>
     </div>
   </div>
-  <audio controls src="../src/84db41f4d5a049a9acd2be15417ee44b.mp3" autoplay class="audio"></audio>
+  <script>
+    function initVars() {
+
+      pi = Math.PI;
+      ctx = canvas.getContext("2d");
+      canvas.width = canvas.clientWidth;
+      canvas.height = canvas.clientHeight;
+      cx = canvas.width / 2;
+      cy = canvas.height / 2;
+      playerZ = -25;
+      playerX = playerY = playerVX = playerVY = playerVZ = pitch = yaw = pitchV = yawV = 0;
+      scale = 600;
+      seedTimer = 0; seedInterval = 5, seedLife = 100; gravity = .02;
+      seeds = new Array();
+      sparkPics = new Array();
+      s = "https://cantelope.org/NYE/";
+      for (i = 1; i <= 10; ++i) {
+        sparkPic = new Image();
+        sparkPic.src = s + "spark" + i + ".png";
+        sparkPics.push(sparkPic);
+      }
+      sparks = new Array();
+      pow1 = new Audio(s + "pow1.ogg");
+      pow2 = new Audio(s + "pow2.ogg");
+      pow3 = new Audio(s + "pow3.ogg");
+      pow4 = new Audio(s + "pow4.ogg");
+      frames = 0;
+    }
+
+    function rasterizePoint(x, y, z) {
+
+      var p, d;
+      x -= playerX;
+      y -= playerY;
+      z -= playerZ;
+      p = Math.atan2(x, z);
+      d = Math.sqrt(x * x + z * z);
+      x = Math.sin(p - yaw) * d;
+      z = Math.cos(p - yaw) * d;
+      p = Math.atan2(y, z);
+      d = Math.sqrt(y * y + z * z);
+      y = Math.sin(p - pitch) * d;
+      z = Math.cos(p - pitch) * d;
+      var rx1 = -1000, ry1 = 1, rx2 = 1000, ry2 = 1, rx3 = 0, ry3 = 0, rx4 = x, ry4 = z, uc = (ry4 - ry3) * (rx2 - rx1) - (rx4 - rx3) * (ry2 - ry1);
+      if (!uc) return { x: 0, y: 0, d: -1 };
+      var ua = ((rx4 - rx3) * (ry1 - ry3) - (ry4 - ry3) * (rx1 - rx3)) / uc;
+      var ub = ((rx2 - rx1) * (ry1 - ry3) - (ry2 - ry1) * (rx1 - rx3)) / uc;
+      if (!z) z = .000000001;
+      if (ua > 0 && ua < 1 && ub > 0 && ub < 1) {
+        return {
+          x: cx + (rx1 + ua * (rx2 - rx1)) * scale,
+          y: cy + y / z * scale,
+          d: Math.sqrt(x * x + y * y + z * z)
+        };
+      } else {
+        return {
+          x: cx + (rx1 + ua * (rx2 - rx1)) * scale,
+          y: cy + y / z * scale,
+          d: -1
+        };
+      }
+    }
+
+    function spawnSeed() {
+
+      seed = new Object();
+      seed.x = -50 + Math.random() * 100;
+      seed.y = 25;
+      seed.z = -50 + Math.random() * 100;
+      seed.vx = .1 - Math.random() * .2;
+      seed.vy = -1.5;//*(1+Math.random()/2);
+      seed.vz = .1 - Math.random() * .2;
+      seed.born = frames;
+      seeds.push(seed);
+    }
+
+    function splode(x, y, z) {
+
+      t = 5 + parseInt(Math.random() * 150);
+      sparkV = 1 + Math.random() * 2.5;
+      type = parseInt(Math.random() * 3);
+      switch (type) {
+        case 0:
+          pic1 = parseInt(Math.random() * 10);
+          break;
+        case 1:
+          pic1 = parseInt(Math.random() * 10);
+          do { pic2 = parseInt(Math.random() * 10); } while (pic2 == pic1);
+          break;
+        case 2:
+          pic1 = parseInt(Math.random() * 10);
+          do { pic2 = parseInt(Math.random() * 10); } while (pic2 == pic1);
+          do { pic3 = parseInt(Math.random() * 10); } while (pic3 == pic1 || pic3 == pic2);
+          break;
+      }
+      for (m = 1; m < t; ++m) {
+        spark = new Object();
+        spark.x = x; spark.y = y; spark.z = z;
+        p1 = pi * 2 * Math.random();
+        p2 = pi * Math.random();
+        v = sparkV * (1 + Math.random() / 6)
+        spark.vx = Math.sin(p1) * Math.sin(p2) * v;
+        spark.vz = Math.cos(p1) * Math.sin(p2) * v;
+        spark.vy = Math.cos(p2) * v;
+        switch (type) {
+          case 0: spark.img = sparkPics[pic1]; break;
+          case 1:
+            spark.img = sparkPics[parseInt(Math.random() * 2) ? pic1 : pic2];
+            break;
+          case 2:
+            switch (parseInt(Math.random() * 3)) {
+              case 0: spark.img = sparkPics[pic1]; break;
+              case 1: spark.img = sparkPics[pic2]; break;
+              case 2: spark.img = sparkPics[pic3]; break;
+            }
+            break;
+        }
+        spark.radius = 25 + Math.random() * 50;
+        spark.alpha = 1;
+        spark.trail = new Array();
+        sparks.push(spark);
+      }
+      switch (parseInt(Math.random() * 4)) {
+        case 0: pow = new Audio(s + "pow1.ogg"); break;
+        case 1: pow = new Audio(s + "pow2.ogg"); break;
+        case 2: pow = new Audio(s + "pow3.ogg"); break;
+        case 3: pow = new Audio(s + "pow4.ogg"); break;
+      }
+      d = Math.sqrt((x - playerX) * (x - playerX) + (y - playerY) * (y - playerY) + (z - playerZ) * (z - playerZ));
+      pow.volume = 1.5 / (1 + d / 10);
+      pow.play();
+    }
+
+    function doLogic() {
+
+      if (seedTimer < frames) {
+        seedTimer = frames + seedInterval * Math.random() * 10;
+        spawnSeed();
+      }
+      for (i = 0; i < seeds.length; ++i) {
+        seeds[i].vy += gravity;
+        seeds[i].x += seeds[i].vx;
+        seeds[i].y += seeds[i].vy;
+        seeds[i].z += seeds[i].vz;
+        if (frames - seeds[i].born > seedLife) {
+          splode(seeds[i].x, seeds[i].y, seeds[i].z);
+          seeds.splice(i, 1);
+        }
+      }
+      for (i = 0; i < sparks.length; ++i) {
+        if (sparks[i].alpha > 0 && sparks[i].radius > 5) {
+          sparks[i].alpha -= .01;
+          sparks[i].radius /= 1.02;
+          sparks[i].vy += gravity;
+          point = new Object();
+          point.x = sparks[i].x;
+          point.y = sparks[i].y;
+          point.z = sparks[i].z;
+          if (sparks[i].trail.length) {
+            x = sparks[i].trail[sparks[i].trail.length - 1].x;
+            y = sparks[i].trail[sparks[i].trail.length - 1].y;
+            z = sparks[i].trail[sparks[i].trail.length - 1].z;
+            d = ((point.x - x) * (point.x - x) + (point.y - y) * (point.y - y) + (point.z - z) * (point.z - z));
+            if (d > 9) {
+              sparks[i].trail.push(point);
+            }
+          } else {
+            sparks[i].trail.push(point);
+          }
+          if (sparks[i].trail.length > 5) sparks[i].trail.splice(0, 1);
+          sparks[i].x += sparks[i].vx;
+          sparks[i].y += sparks[i].vy;
+          sparks[i].z += sparks[i].vz;
+          sparks[i].vx /= 1.075;
+          sparks[i].vy /= 1.075;
+          sparks[i].vz /= 1.075;
+        } else {
+          sparks.splice(i, 1);
+        }
+      }
+      p = Math.atan2(playerX, playerZ);
+      d = Math.sqrt(playerX * playerX + playerZ * playerZ);
+      d += Math.sin(frames / 80) / 1.25;
+      t = Math.sin(frames / 200) / 40;
+      playerX = Math.sin(p + t) * d;
+      playerZ = Math.cos(p + t) * d;
+      yaw = pi + p + t;
+    }
+
+    function rgb(col) {
+
+      var r = parseInt((.5 + Math.sin(col) * .5) * 16);
+      var g = parseInt((.5 + Math.cos(col) * .5) * 16);
+      var b = parseInt((.5 - Math.sin(col) * .5) * 16);
+      return "#" + r.toString(16) + g.toString(16) + b.toString(16);
+    }
+
+    function draw() {
+
+      ctx.clearRect(0, 0, cx * 2, cy * 2);
+
+      ctx.fillStyle = "#ff8";
+      for (i = -100; i < 100; i += 3) {
+        for (j = -100; j < 100; j += 4) {
+          x = i; z = j; y = 25;
+          point = rasterizePoint(x, y, z);
+          if (point.d != -1) {
+            size = 250 / (1 + point.d);
+            d = Math.sqrt(x * x + z * z);
+            a = 0.75 - Math.pow(d / 100, 6) * 0.75;
+            if (a > 0) {
+              ctx.globalAlpha = a;
+              ctx.fillRect(point.x - size / 2, point.y - size / 2, size, size);
+            }
+          }
+        }
+      }
+      ctx.globalAlpha = 1;
+      for (i = 0; i < seeds.length; ++i) {
+        point = rasterizePoint(seeds[i].x, seeds[i].y, seeds[i].z);
+        if (point.d != -1) {
+          size = 200 / (1 + point.d);
+          ctx.fillRect(point.x - size / 2, point.y - size / 2, size, size);
+        }
+      }
+      point1 = new Object();
+      for (i = 0; i < sparks.length; ++i) {
+        point = rasterizePoint(sparks[i].x, sparks[i].y, sparks[i].z);
+        if (point.d != -1) {
+          size = sparks[i].radius * 200 / (1 + point.d);
+          if (sparks[i].alpha < 0) sparks[i].alpha = 0;
+          if (sparks[i].trail.length) {
+            point1.x = point.x;
+            point1.y = point.y;
+            switch (sparks[i].img) {
+              case sparkPics[0]: ctx.strokeStyle = "#f84"; break;
+              case sparkPics[1]: ctx.strokeStyle = "#84f"; break;
+              case sparkPics[2]: ctx.strokeStyle = "#8ff"; break;
+              case sparkPics[3]: ctx.strokeStyle = "#fff"; break;
+              case sparkPics[4]: ctx.strokeStyle = "#4f8"; break;
+              case sparkPics[5]: ctx.strokeStyle = "#f44"; break;
+              case sparkPics[6]: ctx.strokeStyle = "#f84"; break;
+              case sparkPics[7]: ctx.strokeStyle = "#84f"; break;
+              case sparkPics[8]: ctx.strokeStyle = "#fff"; break;
+              case sparkPics[9]: ctx.strokeStyle = "#44f"; break;
+            }
+            for (j = sparks[i].trail.length - 1; j >= 0; --j) {
+              point2 = rasterizePoint(sparks[i].trail[j].x, sparks[i].trail[j].y, sparks[i].trail[j].z);
+              if (point2.d != -1) {
+                ctx.globalAlpha = j / sparks[i].trail.length * sparks[i].alpha / 2;
+                ctx.beginPath();
+                ctx.moveTo(point1.x, point1.y);
+                ctx.lineWidth = 1 + sparks[i].radius * 10 / (sparks[i].trail.length - j) / (1 + point2.d);
+                ctx.lineTo(point2.x, point2.y);
+                ctx.stroke();
+                point1.x = point2.x;
+                point1.y = point2.y;
+              }
+            }
+          }
+          ctx.globalAlpha = sparks[i].alpha;
+          ctx.drawImage(sparks[i].img, point.x - size / 2, point.y - size / 2, size, size);
+        }
+      }
+    }
+
+    function frame() {
+
+      if (frames > 100000) {
+        seedTimer = 0;
+        frames = 0;
+      }
+      frames++;
+      draw();
+      doLogic();
+      requestAnimationFrame(frame);
+    }
+
+
+
+
+    function GetRequest() {
+      var url = decodeURI(location.search); //获取url中"?"符后的字串
+      var theRequest = new Object();
+      if (url.indexOf("?") != -1) {
+        var str = url.substr(1);
+        strs = str.split("&");
+        for (var i = 0; i < strs.length; i++) {
+          theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+        }
+      }
+      return theRequest;
+    }
+    class Shard {
+      constructor(x, y, hue) {
+        this.x = x;
+        this.y = y;
+        this.hue = hue;
+        this.lightness = 50;
+        this.size = 15 + Math.random() * 10;
+        const angle = Math.random() * 2 * Math.PI;
+        const blastSpeed = 1 + Math.random() * 6;
+        this.xSpeed = Math.cos(angle) * blastSpeed;
+        this.ySpeed = Math.sin(angle) * blastSpeed;
+        this.target = getTarget();
+        this.ttl = 100;
+        this.timer = 0;
+      }
+      draw() {
+        ctx2.fillStyle = `hsl(${this.hue}, 100%, ${this.lightness}%)`;
+        ctx2.beginPath();
+        ctx2.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+        ctx2.closePath();
+        ctx2.fill();
+      }
+      update() {
+        if (this.target) {
+          const dx = this.target.x - this.x;
+          const dy = this.target.y - this.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          const a = Math.atan2(dy, dx);
+          const tx = Math.cos(a) * 5;
+          const ty = Math.sin(a) * 5;
+          this.size = lerp(this.size, 1.5, 0.05);
+
+          if (dist < 5) {
+            this.lightness = lerp(this.lightness, 100, 0.01);
+            this.xSpeed = this.ySpeed = 0;
+            this.x = lerp(this.x, this.target.x + fidelity / 2, 0.05);
+            this.y = lerp(this.y, this.target.y + fidelity / 2, 0.05);
+            this.timer += 1;
+          } else
+            if (dist < 10) {
+              this.lightness = lerp(this.lightness, 100, 0.01);
+              this.xSpeed = lerp(this.xSpeed, tx, 0.1);
+              this.ySpeed = lerp(this.ySpeed, ty, 0.1);
+              this.timer += 1;
+            } else {
+              this.xSpeed = lerp(this.xSpeed, tx, 0.02);
+              this.ySpeed = lerp(this.ySpeed, ty, 0.02);
+            }
+        } else {
+          this.ySpeed += 0.2;
+          //this.xSpeed = lerp(this.xSpeed, 0, 0.1);
+          this.size = lerp(this.size, 1, 0.2);
+
+          if (this.y > c2.height) {
+            shards.forEach((shard, idx) => {
+              if (shard === this) {
+                shards.splice(idx, 1);
+              }
+            });
+          }
+        }
+        this.x = this.x + this.xSpeed;
+        this.y = this.y + this.ySpeed;
+      }
+    }
+
+    class Rocket {
+      constructor() {
+        const quarterW = c2.width / 4;
+        this.x = quarterW + Math.random() * (c2.width - quarterW);
+        this.y = c2.height - 15;
+        this.angle = Math.random() * Math.PI / 4 - Math.PI / 6;
+        this.blastSpeed = 6 + Math.random() * 7;
+        this.shardCount = 15 + Math.floor(Math.random() * 15);
+        this.xSpeed = Math.sin(this.angle) * this.blastSpeed;
+        this.ySpeed = -Math.cos(this.angle) * this.blastSpeed;
+        this.hue = Math.floor(Math.random() * 360);
+        this.trail = [];
+      }
+      draw() {
+        ctx2.save();
+        ctx2.translate(this.x, this.y);
+        ctx2.rotate(Math.atan2(this.ySpeed, this.xSpeed) + Math.PI / 2);
+        ctx2.fillStyle = `hsl(${this.hue}, 100%, 50%)`;
+        ctx2.fillRect(0, 0, 5, 15);
+        ctx2.restore();
+      }
+      update() {
+        this.x = this.x + this.xSpeed;
+        this.y = this.y + this.ySpeed;
+        this.ySpeed += 0.1;
+      }
+
+      explode() {
+        for (let i = 0; i < 70; i++) {
+          shards.push(new Shard(this.x, this.y, this.hue));
+        }
+      }
+    }
+
+    console.log(GetRequest('val').val)
+    // INITIALIZATION
+    const [xa, xb, c1, c2, c3] = document.querySelectorAll('canvas');
+    const [ctx1, ctx2, ctx3] = [c1, c2, c3].map(c => c.getContext('2d'));
+    let fontSize = 180;
+    const rockets = [];
+    const shards = [];
+    const targets = [];
+    const fidelity = 3;
+    let counter = 0;
+    c2.width = c3.width = window.innerWidth;
+    c2.height = c3.height = window.innerHeight;
+    ctx1.fillStyle = '#000';
+    const text = '珠珠 生日快乐'
+    let textWidth = 99999999;
+
+    while (textWidth > window.innerWidth) {
+      ctx1.font = `900 ${fontSize--}px Arial`;
+      textWidth = ctx1.measureText(text).width;
+    }
+
+    c1.width = textWidth;
+    c1.height = fontSize * 1.5;
+    ctx1.font = `900 ${fontSize}px Arial`;
+    ctx1.fillText(text, 0, fontSize);
+    const imgData = ctx1.getImageData(0, 0, c1.width, c1.height);
+    for (let i = 0, max = imgData.data.length; i < max; i += 4) {
+      const alpha = imgData.data[i + 3];
+      const x = Math.floor(i / 4) % imgData.width;
+      const y = Math.floor(i / 4 / imgData.width);
+
+      if (alpha && x % fidelity === 0 && y % fidelity === 0) {
+        targets.push({ x, y });
+      }
+    }
+
+    ctx3.fillStyle = '#FFF';
+    ctx3.shadowColor = '#FFF';
+    ctx3.shadowBlur = 25;
+
+    // ANIMATION LOOP
+    (function loop() {
+      ctx2.fillStyle = "rgba(0, 0, 0, .1)";
+      ctx2.fillRect(0, 0, c2.width, c2.height);
+      ctx2.clearRect(0, 0, c2.width, c2.height);
+      counter += 1;
+
+      if (counter % 15 === 0) {
+        rockets.push(new Rocket());
+      }
+      rockets.forEach((r, i) => {
+        r.draw();
+        r.update();
+        if (r.ySpeed > 0) {
+          r.explode();
+          rockets.splice(i, 1);
+        }
+      });
+
+      shards.forEach((s, i) => {
+        s.draw();
+        s.update();
+
+        if (s.timer >= s.ttl || s.lightness >= 99) {
+          ctx3.fillRect(s.target.x, s.target.y, fidelity + 1, fidelity + 1);
+          shards.splice(i, 1);
+        }
+      });
+
+      requestAnimationFrame(loop);
+    })();
+
+    // HELPER FUNCTIONS
+    const lerp = (a, b, t) => Math.abs(b - a) > 0.1 ? a + t * (b - a) : b;
+
+    function getTarget() {
+      if (targets.length > 0) {
+        const idx = Math.floor(Math.random() * targets.length);
+        let { x, y } = targets[idx];
+        targets.splice(idx, 1);
+
+        x += c2.width / 2 - textWidth / 2;
+        y += c2.height / 2 - fontSize / 2;
+
+        return { x, y };
+      }
+    }
+
+    window.addEventListener("resize", () => {
+      canvas.width = canvas.clientWidth;
+      canvas.height = canvas.clientHeight;
+      cx = canvas.width / 2;
+      cy = canvas.height / 2;
+    });
+
+    initVars();
+    frame();
+  </script>
 </body>
-
-
-<script>
-  let imgAry = ['../src/1.jpg', '../src/2.jpg', '../src/3.jpg', '../src/4.jpg', '../src/5.jpg', '../src/6.jpg', '../src/7.jpg'];
-  let ball = [...document.getElementsByClassName('ball')];
-  ball.forEach((item) => {
-    item.addEventListener('click', (item, index) => {
-      let random = Math.random();
-      item.stopPropagation = true;
-      showPic(random);
-    })
-  }) 
-
-
-  function showPic(random) {
-    let picUrl = ~~(random * imgAry.length);
-    let img = document.getElementsByTagName('img')[0];
-    console.log('显示一张图片', img, picUrl, imgAry[picUrl])
-    odiv.style.backgroundImage = `url(${imgAry[picUrl]})`;
-    toysBox.style.left = `20%`;
-    toysBox.style.top = `62%`;
-  }
-
-  // function random() {
-  //   var index = Math.random()
-  //   setTimeout(function timeOut() {
-  //     showPic(index);
-  //     random();
-  //   }, 3000)
-  // }
-</script>
 
 </html>
