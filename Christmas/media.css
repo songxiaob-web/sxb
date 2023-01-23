@@ -1,0 +1,12 @@
+@media (max-width: 500px) {
+  #odiv {
+    background-size: 65% 100%;
+  }
+  .treeandtoys-container {
+    zoom: 0.6;
+  }
+  .bgg li.sphere {
+    width: 80vw;
+    height: 100vw;
+  }
+}
